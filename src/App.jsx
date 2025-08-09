@@ -9,12 +9,12 @@ function App() {
 
   const numCheck = useCallback((e) => {
     setNum(e.target.checked);
-    console.log(e.target.checked)
+    console.log(e.target.checked);
   }, []);
   
   const scharCheck = useCallback((e) => {
     setschar(e.target.checked);
-    console.log(e.target.checked)
+    console.log(e.target.checked);
   }, []);
 
   const passGenerator = useCallback(() => {
@@ -48,29 +48,31 @@ function App() {
 
   return (
     <div className='min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-black p-4'>
-      <div className='w-full max-w-md bg-white/5 backdrop-blur-md rounded-xl p-6 shadow-xl border border-gray-700'>
-        <h1 className='text-2xl font-black text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-6'>Password Generator</h1>
+      <div className='w-full max-w-md bg-white/5 backdrop-blur-md rounded-xl p-4 sm:p-6 shadow-xl border border-gray-700'>
+        <h1 className='text-xl sm:text-2xl font-black text-center text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500 mb-6'>
+          Password Generator
+        </h1>
 
-        <div className='flex items-center gap-2 mb-4'>
+        <div className='flex flex-col sm:flex-row items-stretch sm:items-center gap-2 mb-4'>
           <input 
             value={password} 
-            className='flex-1 bg-gray-700 text-white rounded-l-md px-3 py-2 border border-gray-600 outline-none' 
+            className='flex-1 bg-gray-700 text-white rounded-md sm:rounded-l-md px-3 py-2 border border-gray-600 outline-none text-sm sm:text-base' 
             readOnly 
             type="text" 
           />
           <button 
             onClick={copytoclickboard} 
-            className='bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-700 hover:to-pink-600 text-white font-semibold px-4 py-2 rounded-r-md border border-gray-600'
+            className='bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-purple-700 hover:to-pink-600 text-white font-semibold px-4 py-2 rounded-md sm:rounded-r-md border border-gray-600 text-sm sm:text-base'
           >
             {copy}
           </button>
         </div>
 
         <div className='mb-4 text-white'>
-          <div className='flex items-center justify-between mb-3'>
+          <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2'>
             <input 
               onChange={(e) => setRange(parseInt(e.target.value))} 
-              className='w-2/3 accent-pink-500' 
+              className='w-full sm:w-2/3 accent-pink-500' 
               min={8} 
               max={50} 
               type="range" 
@@ -102,7 +104,7 @@ function App() {
 
         <button 
           onClick={generate} 
-          className='w-full mt-4 py-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg border border-gray-700 shadow-md'
+          className='w-full mt-4 py-2 bg-gradient-to-r from-pink-600 to-purple-600 hover:from-purple-700 hover:to-pink-700 text-white font-bold rounded-lg border border-gray-700 shadow-md text-sm sm:text-base'
         >
           Regenerate
         </button>
@@ -112,3 +114,4 @@ function App() {
 }
 
 export default App;
+
